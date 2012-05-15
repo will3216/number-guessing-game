@@ -1,4 +1,4 @@
 This app is uses an unbounded binary search method to discover the number you are thinking.
 
-A bounded binary search method which takes an enumerable and a key is provided in /lib/binary_search.ru
+A bounded binary search method which takes an enumerable and a key is provided in /lib/binary_search.rb
 
