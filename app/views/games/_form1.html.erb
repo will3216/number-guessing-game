@@ -1,0 +1,46 @@
+<%= form_for(@game) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  
+  <% if !(@game.guess == nil) %>
+    <div class="field">
+      <%= f.hidden_field :answer, :value => @game.answered(@game.update_lower) %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :ub_set, :value => true %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :upper_bound, :value => @game.safe_new_bound %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :guess, :value => @game.update_lower %>
+    </div>
+    <div class="actions">
+      <%= f.submit :Lower %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= f.hidden_field :ub_set, :value => true %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :upper_bound, :value => 0 %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :guess, :value => -1 %>
+    </div>
+    <div class="actions">
+      <%= f.submit :Lower %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,7 @@
+def b_search(array, key, max=array.length, min=0)
+
+
+
+
+
+end

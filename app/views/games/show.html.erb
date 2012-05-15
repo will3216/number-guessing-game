@@ -1,0 +1,14 @@
+<% if @game.answer == 0 %>
+  <h1>Is your number: <%= @game.guess %>? </h1>
+  <p>
+  <%= render 'form' %>
+  <%= render 'form1' %>
+  <%= render 'form2' %>
+  </p>
+<% elsif @game.answer == -1 %>
+  <h1> Liar. </h1>
+<% elsif @game.answer == 1 %>
+  <h1> GREAT SUCCESS! </h1>
+<% end %>
+<h3><%= link_to 'Start Over?', new_game_path %></h3>
+<h3><%= link_to 'Back', root_path %></h3>

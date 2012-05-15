@@ -1,0 +1,13 @@
+This app is uses an unbounded binary search method to discover the number you are thinking. 
+
+Establish the first bound:
+
+It starts with 0 and then asks if the number you are thinking of is less than, greater than, or equal to 0. If you select less than, it sets the upper bound to zero and the next guess to -1. If you select greater than, it sets the lower bound to zero and the next guess to 1. 
+
+Establish the second bound:
+
+Now that one bound and an initial guess has been established, the app repeats the process of asking higher or lower until the second bound can be established by the entry of a higher/lower value of the opposite of the first input. Each time, the new guess is double the previous guess, saving the previous guess as the new established bound.
+
+Commence binary search:
+
+Once both bounds have been established, the search method averages the upper and lower bounds and uses the value as the new guess. If the value is lower, the guess becomes the new upper bound. If the value is higher, the guess becomes the new lower bound. This continues until a guess is selected as being correct, denoting that a great success has been achieved, or until the length of the guessing region is reduced to zero, at which point the app infers that you cannot be trusted.

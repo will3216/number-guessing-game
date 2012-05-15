@@ -1,0 +1,22 @@
+def b_search(array, key)
+  max = array.length
+  min = 0
+  count = 0
+  while max >= min
+    count += 1
+    puts count
+    mid = (max + min)/2    
+    if array[mid] < key
+      min = mid + 1
+    elsif array[mid] > key
+      max = mid - 1
+    else
+      return mid
+    end  
+  end
+  return 'error'
+end
+
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+k = 12
+puts b_search(a, k)
